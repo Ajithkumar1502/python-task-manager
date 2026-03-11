@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Task Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📋 Task Manager</h1>
+
+<a href="/add" class="btn">➕ Add Task</a>
+
+<table>
+
+<tr>
+<th>Title</th>
+<th>Description</th>
+<th>Actions</th>
+</tr>
+
+{% for task in tasks %}
+
+<tr>
+
+<td>{{task[1]}}</td>
+<td>{{task[2]}}</td>
+
+<td class="action">
+
+<a href="/edit/{{task[0]}}">✏ Edit</a>
+
+<a href="/delete/{{task[0]}}">❌ Delete</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
